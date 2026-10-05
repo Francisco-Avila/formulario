@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Práctica 6 - Formularios</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <main class="marco-sistema">
+
+    <header class="encabezado-superior">
+      <h1>Sistema Musical</h1>
+    </header>
+
+    <section class="cuerpo-interfaz">
+      
+      <aside class="panel-menu">
+        <nav>
+          <h2>Menú</h2>
+          <ul>
+            <li><button type="button" onclick="cambiarSeccion('home')">Home</button></li>
+            <li><button type="button" onclick="cambiarSeccion('disco')">Disco</button></li>
+            <li><button type="button" onclick="cambiarSeccion('cantante')">Cantante</button></li>
+            <li><button type="button" onclick="cambiarSeccion('cancion')">Canción</button></li>
+            <li><button type="button" onclick="cambiarSeccion('playlist')">Playlist</button></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="contenedor-pantallas">
+
+        <article id="home" class="pantalla activa">
+          <h2>Home</h2>
+          <section class="contenedor-vista">
+            <section class="tarjeta-home">
+              <h3>Diseño Personal</h3>
+              <p>Selecciona una opción del menú para capturar datos.</p>
+            </section>
+            <figure class="cuadro-imagen">
+              <img src="img/40 Y 20 - José José.jpg">
+            </figure>
+          </section>
+        </article>
+
+        <article id="disco" class="pantalla">
+          <h2>Disco</h2>
+          <section class="contenedor-vista">
+            <form id="form-disco">
+              <p class="fila-campo">
+                <label for="disco-nombre">Nombre:</label>
+                <input type="text" id="disco-nombre" required>
+              </p>
+              <p class="fila-campo">
+                <label for="disco-genero">Género:</label>
+                <input type="text" id="disco-genero" required>
+              </p>
+              <p class="fila-campo">
+                <label for="disco-artista">Artista:</label>
+                <select id="disco-artista" required>
+                  <option value="">Seleccione...</option>
+                  <option value="Artista 1">Artista 1</option>
+                  <option value="Artista 2">Artista 2</option>
+                </select>
+              </p>
+              <p class="fila-campo">
+                <label for="disco-precio">Precio:</label>
+                <input type="number" id="disco-precio" step="0.5" required>
+              </p>
+              <p class="fila-campo">
+                <label for="disco-caratula">Carátula:</label>
+                <input type="file" id="disco-caratula">
+              </p>
+              <p class="fila-boton">
+                <button type="submit" class="btn-guardar">Guardar</button>
+              </p>
+            </form>
+            <figure class="cuadro-imagen">
+              <img src="img/407364728810633404.jpg">
+            </figure>
+          </section>
+        </article>
+
+        <article id="cantante" class="pantalla">
+          <h2>Cantante</h2>
+          <section class="contenedor-vista">
+            <form id="form-cantante">
+              <p class="fila-campo">
+                <label for="cantante-nombre">Nombre:</label>
+                <input type="text" id="cantante-nombre" required>
+              </p>
+              <p class="fila-campo">
+                <label for="cantante-edad">Edad:</label>
+                <input type="number" id="cantante-edad" required>
+              </p>
+              <p class="fila-campo">
+                <label>Género:</label>
+                <span class="opciones-radio">
+                  <label><input type="radio" name="genero-cantante" value="F" required> F</label>
+                  <label><input type="radio" name="genero-cantante" value="M"> M</label>
+                </span>
+              </p>
+              <p class="fila-campo">
+                <label for="cantante-trayectoria">Trayectoria:</label>
+                <input type="number" id="cantante-trayectoria" required>
+              </p>
+              <p class="fila-boton">
+                <button type="submit" class="btn-guardar">Guardar</button>
+              </p>
+            </form>
+            <figure class="cuadro-imagen">
+              <img src="img/Amor Amor - José José.jpg">
+            </figure>
+          </section>
+        </article>
+
+        <article id="cancion" class="pantalla">
+          <h2>Canción</h2>
+          <section class="contenedor-vista">
+            <form id="form-cancion">
+              <p class="fila-campo">
+                <label for="cancion-nombre">Nombre:</label>
+                <input type="text" id="cancion-nombre" required>
+              </p>
+              <p class="fila-campo">
+                <label for="cancion-duracion">Duración:</label>
+                <input type="text" id="cancion-duracion" placeholder="03:30" required>
+              </p>
+              <p class="fila-campo">
+                <label for="cancion-compositor">Compositor:</label>
+                <input type="text" id="cancion-compositor" required>
+              </p>
+              <p class="fila-campo">
+                <label for="cancion-cantante">Cantante:</label>
+                <select id="cancion-cantante" required>
+                  <option value="">Seleccione...</option>
+                  <option value="Cantante 1">Cantante 1</option>
+                  <option value="Cantante 2">Cantante 2</option>
+                </select>
+              </p>
+              <p class="fila-boton">
+                <button type="submit" class="btn-guardar">Guardar</button>
+              </p>
+            </form>
+            <figure class="cuadro-imagen">
+              <img src="img/Canciones 1996 _ 2006.jpg">
+            </figure>
+          </section>
+        </article>
+
+        <article id="playlist" class="pantalla">
+          <h2>Playlist</h2>
+          <section class="contenedor-vista">
+            <form id="form-playlist">
+              <p class="fila-campo">
+                <label for="playlist-nombre">Nombre:</label>
+                <input type="text" id="playlist-nombre" required>
+              </p>
+              <p class="fila-campo">
+                <label for="playlist-usuario">Usuario:</label>
+                <select id="playlist-usuario" required>
+                  <option value="">Seleccione...</option>
+                  <option value="usuario_1">Usuario 1</option>
+                  <option value="usuario_2">Usuario 2</option>
+                </select>
+              </p>
+              <p class="fila-boton">
+                <button type="submit" class="btn-guardar">Guardar</button>
+              </p>
+            </form>
+            <figure class="cuadro-imagen">
+              <img src="img/Expectativas - Bunbury.jpg">
+            </figure>
+          </section>
+        </article>
+
+      </section>
+    </section>
+
+    <footer class="pie-interfaz">
+      <p>Grupo: LDSM401</p>
+      <p>Alumno: Francisco Hernández</p>
+    </footer>
+
+  </main>
+
+  <script src="js/funcionalidad.js"></script>
+</body>
+</html>
